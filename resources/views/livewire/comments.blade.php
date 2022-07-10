@@ -16,12 +16,12 @@
         <input type="file" id="image">
     </section>
 
-{{--    <form class="my-4 flex">--}}
-        <input type="text" wire:model="newComment" class="w-full rounded border shadow p-2 mr-2 my-2" placeholder="What's in your mind." />
+    <form class="my-4 flex" wire:submit.prevent="addComment">
+        <input type="text" wire:model.lazy="newComment" class="w-full rounded border shadow p-2 mr-2 my-2" placeholder="What's in your mind." />
         <div class="py-2">
-            <button type="submit" class="p-2 bg-blue-500 w-20 rounded shadow text-white" wire:click="addComment">Add</button>
+            <button type="submit" class="p-2 bg-blue-500 w-20 rounded shadow text-white">Add</button>
         </div>
-{{--    </form>--}}
+    </form>
     @foreach($comments as $comment)
             <div class="rounded border shadow p-3 my-2">
         <div class="flex justify-between my-2">
