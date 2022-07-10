@@ -10,7 +10,7 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <livewire:comments />
+    <livewire:comments :InitialComments="$comments"/>
 
 @livewireScripts
 </body>
