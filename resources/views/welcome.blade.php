@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     @livewireStyles
-
+    @vite('resources/css/app.css')
 </head>
 <body>
-    <livewire:counter />
+    <livewire:comments />
 
 @livewireScripts
 </body>
