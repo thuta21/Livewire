@@ -6,11 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+          integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous"/>
     @livewireStyles
     @vite('resources/css/app.css')
 </head>
 <body>
-    <livewire:comments :comments="$comments"/>
+<livewire:comments :comments="$comments"/>
 
 @livewireScripts
 </body>
