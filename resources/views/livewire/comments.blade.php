@@ -39,7 +39,7 @@
             {{--        @endif--}}
         </div>
     @endforeach
-    {{ $comments->links() }}
+    {{ $comments->links('livewire.pagination-links') }}
 
 </div>
 

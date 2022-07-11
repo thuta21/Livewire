@@ -41,6 +41,11 @@ class Comments extends Component
         $comment->delete();
     }
 
+    public function paginationView()
+    {
+        return 'custom-pagination-links-view';
+    }
+
     public function render()
     {
         return view('livewire.comments', [
