@@ -1,6 +1,6 @@
 <div>
     <h1 class="text-3xl">Comments</h1>
-    {{--    @error('newComment') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror--}}
+        @error('body') <span class="text-red-500 text-xs">{{ $message }}</span> @enderror
     <div>
         {{--        @if (session()->has('message'))--}}
         {{--        <div class="p-3 bg-green-300 text-green-800 rounded shadow-sm">--}}
@@ -17,7 +17,7 @@
     </section>
 
     <form class="my-4 flex" wire:submit.prevent="addComment">
-        <input type="text" wire:model.lazy="newComment" class="w-full rounded border shadow p-2 mr-2 my-2" placeholder="What's in your mind." />
+        <input type="text" wire:model.debounce.500ms="body" class="w-full rounded border shadow p-2 mr-2 my-2" placeholder="What's in your mind." />
         <div class="py-2">
             <button type="submit" class="p-2 bg-blue-500 w-20 rounded shadow text-white">Add</button>
         </div>

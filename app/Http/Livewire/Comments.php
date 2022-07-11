@@ -10,27 +10,33 @@ class Comments extends Component
 {
     public $comments;
 
-    public $newComment;
+    public $body;
 
     public function mount($comments)
     {
         $this->comments = $comments;
     }
 
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName, [
+            'body' => 'required|min:6',
+        ]);
+    }
+
+
     public function addComment()
     {
-        if($this->newComment == '')
-        {
-            return ;
-        }
-        $createdComments = Comment::create([
-            'body' => $this->newComment,
-            'user_id' => 1
-        ]);
 
+        $validatedData = $this->validate([
+            'body' => 'required|min:6',
+        ]);
+        $validatedData['user_id'] = 1;
+
+        $createdComments = Comment::create($validatedData);
         $this->comments->push($createdComments);
 
-        $this->newComment = '';
+        $this->body = '';
     }
 
     public function render()
